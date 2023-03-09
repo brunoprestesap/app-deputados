@@ -13,7 +13,11 @@ const Faltas = () => {
         const response = await axios.get(
           "https://political-api.vercel.app/presenca"
         );
-        setDados(response.data);
+        const deputados = response.data;
+        const depap = deputados.filter((el) => {
+            return el.estado === 'AP'
+        })
+        setDados(depap)
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -25,9 +29,9 @@ const Faltas = () => {
 
   return (
     <div>
-      <div className="bg-sky-800/50 p-5">
-        <h1 className="text-center text-base font-bold">
-          Faltas dos Deputados Federais do Amapá
+      <div className="bg-sky-900/80 p-5">
+        <h1 className="text-center text-white text-base font-bold">
+          Quadro de faltas dos Deputados Federais do Amapá
         </h1>
       </div>
       <div className="p-5 grid grid-cols-2 gap-5">
