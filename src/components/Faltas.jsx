@@ -34,7 +34,7 @@ const Faltas = () => {
           Quadro de faltas dos Deputados Federais do Amapá
         </h1>
       </div>
-      <div className="p-5 grid grid-cols-2 gap-5">
+      <div className="p-5 grid grid-cols-2 md:grid-cols-4 gap-5">
         {!isLoading && (
           <>
             {dados.map((dep) => {
