@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { FaUserTie } from "react-icons/fa";
+import { FaUserTie, FaInstagram } from "react-icons/fa";
 
 const Faltas = () => {
   const [dados, setDados] = useState([]);
@@ -29,11 +29,22 @@ const Faltas = () => {
 
   return (
     <div>
-      <div className="bg-sky-900/80 p-5">
-        <h1 className="text-center text-white text-base font-bold">
-          Quadro de faltas dos Deputados Federais do Amapá
-        </h1>
+      <div className="bg-sky-900/80 p-5 flex justify-between items-center">
+        <div>
+          <h1 className="text-center text-white text-sm md:text-2xl font-bold">
+            Quadro de faltas dos Deputados Federais do Amapá
+          </h1>
+        </div>
+        
+        <a href="http://www.instagram.com/brunoasprestes">
+        <div className="flex flex-col items-center justify-center">
+          <FaInstagram className="text-white text-xl md:text-4xl"/>
+          <p className="text-white text-xs font-semibold">@brunoasprestes</p>
+        </div>
+        </a>
+        
       </div>
+      
       <div className="p-5 grid grid-cols-2 md:grid-cols-4 gap-5">
         {!isLoading && (
           <>
